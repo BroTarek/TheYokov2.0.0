@@ -8,8 +8,7 @@ declare module 'axios' {
   }
 }
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://theyoko-production.up.railway.app/api";
-
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL 
 export const axiosInstance = axios.create({
   baseURL: BASE_URL,
   headers: {
