@@ -170,7 +170,7 @@ export function CountrySelect({
         className="w-full p-0 border-gray-200 bg-white shadow-lg"
         align="start"
       >
-        <Command className="border-none">
+        <Command className="border-none" shouldFilter={false}>
           <CommandInput
             placeholder="Search regions..."
             value={search}

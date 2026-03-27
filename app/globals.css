@@ -33,10 +33,10 @@
   --font-size-large: 36px;
   --font-size-xlarge: 42px;
 
-  --radius-xl: 1rem;
-  --radius-lg: 0.75rem;
-  --radius-md: 0.5rem;
-  --radius-sm: 0.25rem;
+  --radius-xl: 1px;
+  --radius-lg: 1px;
+  --radius-md: 1px;
+  --radius-sm: 1px;
 }
 
 :root {
@@ -44,7 +44,7 @@
   --primary-foreground: oklch(0.985 0.002 247.839);
   --secondary: oklch(0.967 0.003 264.542);
   --secondary-foreground: oklch(0.21 0.034 264.665);
-  --radius: 0.625rem;
+  --radius: 1px;
   --background: oklch(1 0 0);
   --foreground: oklch(0.13 0.028 261.692);
   --card: oklch(1 0 0);

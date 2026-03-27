@@ -8,6 +8,7 @@ interface WizardNavigationProps {
     onNext: () => void;
     onPrevious: () => void;
     onComplete: () => void;
+    isValid?: boolean;
 }
 
 export function WizardNavigation({
@@ -16,6 +17,7 @@ export function WizardNavigation({
     onNext,
     onPrevious,
     onComplete,
+    isValid = true,
 }: WizardNavigationProps) {
     const isFirstStep = currentStep === 1;
     const isLastStep = currentStep === totalSteps;
@@ -36,8 +38,9 @@ export function WizardNavigation({
 
             <button
                 onClick={isLastStep ? onComplete : onNext}
-                className={`px-6 py-3 rounded-lg font-semibold text-white transition-all flex items-center gap-2 ${isLastStep
-                    ? 'bg-kaizen-red cursor-pointer hover:bg-kaizen-red/90'
+                disabled={!isValid}
+                className={`px-8 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase text-white transition-all flex items-center gap-2 ${!isValid
+                    ? 'bg-red-200 cursor-not-allowed'
                     : 'bg-kaizen-red cursor-pointer hover:bg-kaizen-red/90'
                     }`}
                 aria-label={isLastStep ? 'Complete form' : 'Go to next step'}

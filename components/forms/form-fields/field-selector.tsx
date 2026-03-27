@@ -116,7 +116,7 @@ export function FieldSelector({
       {/* Title */}
       <div>
         <label className="block font-medium mb-3 text-sm text-primary-text">
-          Enter Your Area Of Expertise
+          Enter Your Area of Expertise
         </label>
 
         {/* Search Input */}
@@ -147,29 +147,7 @@ export function FieldSelector({
           </div>
         )}
 
-        {/* Category Chips */}
-        <div className="mb-4">
-          <div className="flex flex-wrap gap-2">
-            {categories.map((category) => {
-              const isActive = activeCategory === category;
-              return (
-                <button
-                  key={category}
-                  type="button"
-                  onClick={() => toggleCategory(category)}
-                  className={cn(
-                    'px-3 py-1.5 rounded-full text-xs font-medium transition-all border',
-                    isActive
-                      ? 'border-vivid-red bg-red-50 text-vivid-red'
-                      : 'border-gray-300 bg-white text-primary-text hover:border-vivid-red/40 hover:bg-red-50/50'
-                  )}
-                >
-                  {category}
-                </button>
-              );
-            })}
-          </div>
-        </div>
+        {/* Category Chips Removed for less Redundancy */}
       </div>
 
       {/* Fields Grid */}

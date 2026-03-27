@@ -40,8 +40,23 @@ export function WizardForm() {
     const [referralSourceLabel, setReferralSourceLabel] = useState('');
 
     // Navigation handlers
+    const isStepValid = (step: number) => {
+        switch (step) {
+            case 1:
+                return firstName.trim() !== '' && lastName.trim() !== '' && email.trim() !== '' && phoneNumber.trim() !== '' && referralSource !== '';
+            case 2:
+                return selectedExperience !== '' && selectedFieldId !== '';
+            case 3:
+                return selectedPosition !== '' && company.trim() !== '' && selectedCountries.length > 0 && experienceDescription.trim() !== '';
+            case 4:
+                return googleDriveUrl.trim() !== '';
+            default:
+                return true;
+        }
+    };
+
     const handleNext = () => {
-        if (currentStep < WIZARD_STEPS.length) {
+        if (currentStep < WIZARD_STEPS.length && isStepValid(currentStep)) {
             setCurrentStep(currentStep + 1);
         }
     };
@@ -86,7 +101,11 @@ export function WizardForm() {
     };
 
     const handleStepClick = (stepId: number) => {
-        setCurrentStep(stepId);
+        if (stepId < currentStep) {
+            setCurrentStep(stepId);
+        } else if (stepId === currentStep + 1 && isStepValid(currentStep)) {
+            setCurrentStep(stepId);
+        }
     };
 
     // Render current step content
@@ -167,13 +186,8 @@ export function WizardForm() {
     return (
         <div className="min-h-screen bg-white p-4 sm:p-8">
             <div className="max-w-4xl mx-auto">
-                {/* Header */}
+                {/* Header removed as requested */}
                 <div className="mb-8">
-                    <WizardHeader
-                        currentStep={currentStep}
-                        totalSteps={WIZARD_STEPS.length}
-                    />
-
                     {/* Progress Indicator */}
                     <WizardProgress
                         steps={WIZARD_STEPS}
@@ -183,7 +197,7 @@ export function WizardForm() {
                 </div>
 
                 {/* Form Content */}
-                <div className="rounded-2xl shadow-lg p-8 bg-white border border-secondary-grey">
+                <div className="rounded-[1px] shadow-lg p-8 bg-white">
                     {renderFormContent()}
 
                     {/* Navigation Buttons */}
@@ -193,6 +207,7 @@ export function WizardForm() {
                         onNext={handleNext}
                         onPrevious={handlePrevious}
                         onComplete={handleComplete}
+                        isValid={isStepValid(currentStep)}
                     />
                 </div>
             </div>

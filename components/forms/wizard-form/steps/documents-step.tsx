@@ -11,8 +11,8 @@ export function DocumentsStep({ googleDriveUrl, setGoogleDriveUrl }: DocumentsSt
     return (
         <div className="space-y-6">
             <div className="space-y-4">
-                <div className="p-4 bg-sky-50 border border-sky-100 rounded-lg text-sky-800 text-sm">
-                    <p className="font-medium mb-1">Upload your documents</p>
+                <div className="p-4 bg-red-50 border border-kaizen-red/20 rounded-lg text-kaizen-red text-sm">
+                    <p className="font-medium mb-1 text-primary-text">Upload your documents</p>
                     <p>Please provide a Google Drive link containing your Resume, Portfolio, and any other relevant certificates.</p>
                 </div>
 

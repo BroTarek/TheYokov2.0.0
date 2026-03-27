@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${lato.variable} ${spaceGrotesk.variable} font-sans antialiased`}
+        className={`${lato.variable} ${spaceGrotesk.variable} font-sans antialiased overflow-x-hidden`}
       >
         <Providers>
           <Navbar />

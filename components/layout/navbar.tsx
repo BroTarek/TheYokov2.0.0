@@ -64,13 +64,9 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16 items-center">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-kaizen-red flex items-center justify-center shadow-lg shadow-kaizen-red/20">
-                            <span className="text-white font-bold text-sm">📝</span>
-                        </div>
-                        <span className="font-bold text-xl tracking-tight text-primary-text">
-                            TheYoko
-                        </span>
+                    <Link href="/" className="flex items-center">
+                        <span className="text-2xl font-bold tracking-tight text-primary-text font-sans">TheYoKo</span>
+                        <span className="text-kaizen-red text-2xl font-bold leading-none">.</span>
                     </Link>
 
                     {/* Desktop Navigation - Hidden Sidebar Icon (as requested) */}

@@ -41,7 +41,7 @@ export function WizardProgress({
                             <div key={step.id} className="flex flex-col items-center">
                                 <button
                                     onClick={() => onStepClick(step.id)}
-                                    className={`relative w-10 h-10 rounded-full font-semibold text-sm transition-all mb-3 ${isCompleted
+                                    className={`relative w-10 h-10 rounded-full font-bold text-lg font-[var(--font-space-grotesk)] transition-all mb-3 ${isCompleted
                                         ? 'bg-kaizen-red text-white shadow-lg'
                                         : isCurrent
                                             ? 'bg-kaizen-red text-white shadow-lg ring-4 ring-kaizen-red/30'
@@ -57,12 +57,10 @@ export function WizardProgress({
                                     )}
                                 </button>
                                 <div className="text-center px-1">
-                                    <p className="font-semibold text-small text-primary-text leading-tight">
+                                    <p className="font-bold text-sm text-primary-text leading-tight uppercase font-sans">
                                         {step.title}
                                     </p>
-                                    <p className="hidden sm:block text-[11px] text-secondary-grey mt-1 leading-tight">
-                                        {step.description}
-                                    </p>
+                                    {/* Subheadings removed as per instruction #10 */}
                                 </div>
                             </div>
                         );
