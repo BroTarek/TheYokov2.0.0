@@ -213,12 +213,12 @@ function PortfolioContent() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2 mt-4 md:mt-0 print:hidden">
-              <Button onClick={handleDownloadCV}>
+              {/* <Button onClick={handleDownloadCV}>
                 <Download className="w-4 h-4 mr-2" />
                 <Link href={`${applicant.googleDriveUrl}`}>View CV</Link>
 
 
-              </Button>
+              </Button> */}
             </div>
           </div>
 
@@ -278,7 +278,6 @@ function PortfolioContent() {
           <TabsList className="grid grid-cols-1 md:grid-cols-4 w-full print:hidden">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="experience">Experience</TabsTrigger>
-            <TabsTrigger value="documents">Documents</TabsTrigger>
             <TabsTrigger value="contact">Contact</TabsTrigger>
           </TabsList>
 
@@ -458,7 +457,7 @@ function PortfolioContent() {
           </TabsContent>
 
           {/* Documents Tab */}
-          <TabsContent value="documents" className="space-y-6">
+          {/* <TabsContent value="documents" className="space-y-6">
             <Card className="border shadow-sm">
               <CardHeader>
                 <CardTitle className="flex items-center">
@@ -497,7 +496,7 @@ function PortfolioContent() {
                 </div>
               </CardContent>
             </Card>
-          </TabsContent>
+          </TabsContent> */}
 
           {/* Contact Tab */}
           <TabsContent value="contact" className="space-y-6">
@@ -560,7 +559,7 @@ function PortfolioContent() {
             </div>
 
             {/* Quick Actions */}
-            <Card className="border shadow-sm">
+            {/* <Card className="border shadow-sm">
               <CardHeader>
                 <CardTitle>Quick Actions</CardTitle>
               </CardHeader>
@@ -574,7 +573,7 @@ function PortfolioContent() {
                   
                 </div>
               </CardContent>
-            </Card>
+            </Card> */}
           </TabsContent>
         </Tabs>
 
