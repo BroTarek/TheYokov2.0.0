@@ -11,7 +11,7 @@ const ACCENT = "#cd0026";
 const styles: Record<string, React.CSSProperties> = {
   /* ── Outer wrapper ── */
   footer: {
-    backgroundColor: "#414a53ff",
+    backgroundColor: "#242b32",
     color: "#ffffff",
     fontFamily: "'Lato', sans-serif",
     width: "100%",
