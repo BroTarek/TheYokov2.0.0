@@ -105,7 +105,7 @@ export default function Navbar() {
                                 onClick={() => setIsLoginModalOpen(true)}
                                 className="text-gray-500 hover:text-kaizen-red text-xs font-semibold"
                             >
-                                Admin
+                                Login
                             </Button>
                         )}
 
