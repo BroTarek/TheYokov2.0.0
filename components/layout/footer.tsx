@@ -11,7 +11,7 @@ const ACCENT = "#cd0026";
 const styles: Record<string, React.CSSProperties> = {
   /* ── Outer wrapper ── */
   footer: {
-    backgroundColor: "#4E5D6C",
+    backgroundColor: "#414a53ff",
     color: "#ffffff",
     fontFamily: "'Lato', sans-serif",
     width: "100%",
@@ -252,11 +252,12 @@ const footer=()=> {
         {/* ── Top section ─────────────────────────────────────────────────────── */}
         <div className="yoko-footer-top" style={styles.topSection}>
 
+
           {/* Left column */}
           <div style={styles.leftCol}>
 
             {/* Logo */}
-            <div style={styles.logoWrap}>
+            {/* <div style={styles.logoWrap}>
               <img
                 src="https://theyoko.com/wp-content/uploads/2021/07/The-YoKo-WM-WHT-NO-BG1.png"
                 alt="TheYoKo Logo"
@@ -264,8 +265,12 @@ const footer=()=> {
                 height={58}
                 style={{ width: "100%", height: "auto" }}
                 
-              />
-            </div>
+              /> 
+             
+            </div>*/}
+
+             <div style={{display:"inline-block",width:"140.49px",height:"37.59px"}}><img src="https://theyoko.com/wp-content/uploads/2021/07/The-YoKo-WM-WHT-NO-BG1.png" alt="TheYoKo Logo" width="220" height="58" style={{width:"100%",height:"auto"}}/></div>
+              
 
             {/* Tagline */}
             <p style={styles.tagline}>
