@@ -67,7 +67,7 @@ export default function Navbar() {
                     <Link href="/" className="flex items-center">
                         <span className="text-2xl font-bold tracking-tight text-primary-text font-sans">
                         <img src="https://theyoko.com/wp-content/uploads/2021/07/The-YoKo-BLK-NO-BG1.png" alt=""
-                        style={{width:"73.44px",height:"55px"}} />
+                        style={{width:"55px",height:"50px"}} />
                         </span>
                         {/* <span className="text-kaizen-red text-2xl font-bold leading-none">.</span> */}
                     </Link>
