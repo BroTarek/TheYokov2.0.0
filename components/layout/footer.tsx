@@ -190,7 +190,7 @@ function ArrowForwardIcon() {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-const Footer=()=> {
+const footer=()=> {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
@@ -360,4 +360,4 @@ const Footer=()=> {
   );
 }
 
-export default Footer
+export default footer

@@ -3,7 +3,7 @@ import { Lato, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/Providers";
 import Navbar from "@/components/layout/navbar";
-import Footer from "@/components/layout/Footer";
+import Footer from "@/components/layout/footer";
 
 const lato = Lato({
   variable: "--font-lato",
