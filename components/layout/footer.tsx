@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
+
 
 // ─── Inline styles (replaces the Elementor/Bootstrap/Hub CSS) ───────────────
 // All visual rules are self-contained so layout.tsx needs no extra imports.
@@ -190,7 +190,7 @@ function ArrowForwardIcon() {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-export default function Footer() {
+const Footer=()=> {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
@@ -359,3 +359,5 @@ export default function Footer() {
     </>
   );
 }
+
+export default Footer
