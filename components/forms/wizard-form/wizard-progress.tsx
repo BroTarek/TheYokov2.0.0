@@ -22,7 +22,7 @@ export function WizardProgress({
                     {steps.slice(0, -1).map((step) => (
                         <div
                             key={`line-${step.id}`}
-                            className={`flex-1 h-1 transition-colors ${currentStep > step.id ? 'bg-black' : 'bg-kaizen-red/20'
+                            className={`flex-1 h-1 transition-colors ${currentStep > step.id ? 'bg-kaizen-red' : 'bg-kaizen-red/20'
                                 }`}
                         />
                     ))}

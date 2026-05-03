@@ -27,13 +27,13 @@ export function WizardNavigation({
             <button
                 onClick={onPrevious}
                 disabled={isFirstStep}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all border ${isFirstStep
+                className={`px-6 py-3 rounded-full font-semibold transition-all border ${isFirstStep
                     ? 'bg-secondary-grey text-white border-transparent cursor-not-allowed'
-                    : 'bg-white text-primary-text border-secondary-grey cursor-pointer hover:bg-gray-50'
+                    : 'bg-kaizen-red text-white -pointer hover:bg-kaizen-red/90'
                     }`}
                 aria-label="Go to previous step"
             >
-                Back
+                BACK
             </button>
 
             <button

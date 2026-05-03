@@ -50,7 +50,7 @@ export function ExperienceStep({
                             <SelectItem
                                 key={level.value}
                                 value={level.value}
-                                className="py-2.5 px-3 rounded-md cursor-pointer transition-colors duration-150
+                                className="py-2.5 px-3 rounded-md cursor-pointer transition-colors duration-150 font-[var(--font-space-grotesk)]
                   hover:bg-red-50 hover:text-kaizen-red
                   focus:bg-red-50 focus:text-kaizen-red
                   data-[state=checked]:bg-red-50 data-[state=checked]:text-kaizen-red
