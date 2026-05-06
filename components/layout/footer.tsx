@@ -3,39 +3,50 @@
 import React, { useState } from "react";
 
 
-// ─── Inline styles (replaces the Elementor/Bootstrap/Hub CSS) ───────────────
-// All visual rules are self-contained so layout.tsx needs no extra imports.
 
 const ACCENT = "#cd0026";
 
 const styles: Record<string, React.CSSProperties> = {
   /* ── Outer wrapper ── */
+  footerWrapper: {
+    minHeight: "400px", // Set minimum height
+    // height: "500px", // Set fixed height
+    // maxHeight: "600px", // Set maximum height
+    display: "flex",
+    flexDirection: "column" as const,
+  },
+
   footer: {
     backgroundColor: "#242b32",
     color: "#ffffff",
     fontFamily: "'Lato', sans-serif",
     width: "100%",
+    flex:1
   },
 
   /* ── Top section (logo + newsletter | collab) ── */
   topSection: {
     maxWidth: 1200,
     margin: "0 auto",
-    padding: "64px 24px 48px",
+    padding: "67px 24px 20px",
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
-    gap: "48px 64px",
+    gap: "0 64px",
   },
 
   /* ── Left column ── */
   leftCol: {
     display: "flex",
     flexDirection: "column",
-    gap: 20,
+    gap: 0,
+    overflow: "visible",
   },
   logoWrap: {
     display: "inline-block",
-    maxWidth: 220,
+    width: "140.49px",
+    height: "37.59px",
+    transform: "translateY(50%)",
+    translate:"13px",
   },
   tagline: {
     fontSize: 14,
@@ -43,6 +54,9 @@ const styles: Record<string, React.CSSProperties> = {
     lineHeight: 1.7,
     color: "rgba(255,255,255,0.75)",
     margin: 0,
+    marginTop: 24,
+    transform: "translateY(36.122222%)",
+    translate:"13px",
   },
   taglineBold: { fontWeight: 600 },
   taglineBlack: { fontWeight: 900 },
@@ -51,34 +65,44 @@ const styles: Record<string, React.CSSProperties> = {
   /* ── Newsletter form ── */
   form: {
     display: "flex",
-    flexDirection: "column" as const,
-    gap: 10,
-    marginTop: 4,
+    flexDirection: "row" as const,
+    alignItems: "center",
+    gap: 12,
+    marginTop: 48,
+    transform: "translateY(36.122222%)",
+    translate:"13px",
   },
   input: {
-    width: "100%",
+    flex: 1,
+    maxWidth:"288px",
     boxSizing: "border-box" as const,
     backgroundColor: "rgba(255,255,255,0.07)",
     border: "1px solid rgba(255,255,255,0.18)",
     borderRadius: "50px",
     color: "#fff",
-    fontSize: 13,
-    padding: "12px 20px",
+    fontSize: 16,
+    padding: "12px 25px",
     outline: "none",
     fontFamily: "'Lato', sans-serif",
+    transform: "translateY(-22%)",
   },
   submitBtn: {
-    width: "100%",
+    width: 47,
+    height: 47,
+    flexShrink: 0,
     backgroundColor: "rgba(255,255,255,0.05)",
     border: `1px solid rgba(255,255,255,0.18)`,
-    borderRadius: "50px",
+    borderRadius: "50%",
     color: "#fff",
+    fontWeight: 36,
     cursor: "pointer",
-    padding: "12px 20px",
+    padding: "10px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     transition: "background 0.2s",
+    transform: "translateY(-22%)",
+    translate:"11px"
   },
   formMessage: {
     marginTop: 8,
@@ -90,17 +114,20 @@ const styles: Record<string, React.CSSProperties> = {
   /* ── Social icons ── */
   socials: {
     display: "flex",
-    gap: 12,
-    marginTop: 4,
+    
+    marginTop: 48,
+    transform: "translateY(-70%)",
+    translate:"13px",
   },
   socialLink: {
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    width: 36,
-    height: 36,
-    borderRadius: "50%",
-    border: "1px solid rgba(255,255,255,0.2)",
+    width: 46,
+    height: 46,
+    scale:"1.3",
+    // borderRadius: "50%",
+    border: "none",
     color: "#fff",
     transition: "border-color 0.2s, background 0.2s",
     textDecoration: "none",
@@ -111,17 +138,20 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-end",
+    alignItems:"flex-end",
+    transform: "translateY(-7%)",
+    translate:"-13px",
     gap: 8,
   },
   collabLabel: {
     fontSize: 15,
-    fontWeight: 400,
+    fontWeight: 300,
     color: "rgba(255,255,255,0.7)",
     margin: 0,
   },
   collabEmail: {
     fontSize: 20,
-    fontWeight: 700,
+    fontWeight: 400,
     color: "#ffffff",
     textDecoration: "none",
     letterSpacing: "-0.3px",
@@ -132,13 +162,14 @@ const styles: Record<string, React.CSSProperties> = {
   divider: {
     borderColor: "rgba(255,255,255,0.10)",
     margin: 0,
+    
   },
 
   /* ── Bottom bar ── */
   bottomSection: {
     maxWidth: 1200,
     margin: "0 auto",
-    padding: "20px 24px",
+    padding: "40px 24px",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
@@ -215,25 +246,15 @@ const footer=()=> {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Space+Grotesk:wght@300..700&display=swap');
 
-        /* ── Desktop: form side-by-side ── */
+        /* ── Desktop: form spacing ── */
         @media (min-width: 768px) {
-          .yoko-footer-form        { flex-direction: row !important; gap: 0 !important; }
-          .yoko-footer-form-input  {
-            border-radius: 50px 0 0 50px !important;
-            border-right: none !important;
-            width: auto !important;
-          }
-          .yoko-footer-form-btn    {
-            width: auto !important;
-            border-radius: 0 50px 50px 0 !important;
-            padding: 12px 18px !important;
-          }
+          .yoko-footer-form { gap: 12 !important; }
         }
 
         /* ── Responsive: single-column layout ── */
         @media (max-width: 767px) {
           .yoko-footer-top   { grid-template-columns: 1fr !important; gap: 40px !important; }
-          .yoko-footer-right { justify-content: flex-start !important; }
+          .yoko-footer-right { justify-content: flex-end !important; }
         }
 
         /* ── Hover states that can't live in inline styles ── */
@@ -246,6 +267,7 @@ const footer=()=> {
         .yoko-footer-form-input:focus { border-color: rgba(255,255,255,0.4) !important; }
         .yoko-footer-form-btn:hover   { background: rgba(255,255,255,0.12) !important; }
       `}</style>
+     <footer style={styles.footerWrapper}>
 
       <footer style={styles.footer} itemScope itemType="http://schema.org/WPFooter">
 
@@ -269,7 +291,7 @@ const footer=()=> {
              
             </div>*/}
 
-             <div style={{display:"inline-block",width:"140.49px",height:"37.59px"}}><img src="https://theyoko.com/wp-content/uploads/2021/07/The-YoKo-WM-WHT-NO-BG1.png" alt="TheYoKo Logo" width="220" height="58" style={{width:"100%",height:"auto"}}/></div>
+             <div style={styles.logoWrap}><img src="https://theyoko.com/wp-content/uploads/2021/07/The-YoKo-WM-WHT-NO-BG1.png" alt="TheYoKo Logo" width="220" height="58" style={{width:"100%",height:"auto"}}/></div>
               
 
             {/* Tagline */}
@@ -347,7 +369,7 @@ const footer=()=> {
         {/* ── Bottom bar ──────────────────────────────────────────────────────── */}
         <div style={styles.bottomSection}>
           <p style={styles.copyright}>
-            © Copyright 2025{" "}
+            © Copyright 2026{" "}
             <span style={styles.copyrightBrand}>TheYoKo</span>
             <span style={{ fontWeight: 900, color: ACCENT }}>.</span> LLC. All rights reserved.
           </p>
@@ -361,6 +383,7 @@ const footer=()=> {
           </a>
         </div>
       </footer>
+     </footer>
     </>
   );
 }
