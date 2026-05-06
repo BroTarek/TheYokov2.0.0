@@ -63,12 +63,16 @@ export default function Navbar() {
         <nav className="fixed top-5 left-0 right-0 z-50 bg-transparent print:hidden pointer-events-none">
             <div className="w-full relative h-28">
                 {/* Logo wrapper (Absolute positioned for free movement) */}
-                <div className="absolute left-4 sm:left-8 lg:left-12 top-0 h-full flex items-center pointer-events-auto">
-                    <Link href="/" className="flex items-center">
-                        <img src="https://theyoko.com/wp-content/uploads/2021/07/The-YoKo-BLK-NO-BG1.png" alt="The Yoko Logo"
-                        className="w-[120px] h-auto object-contain" />
-                    </Link>
-                </div>
+                
+                <div className="absolute left-24 sm:left-8 lg:left-50 top-0 h-full flex items-center pointer-events-auto hidden sm:flex">
+    <Link href="/" className="flex items-center">
+        <img 
+            src="https://theyoko.com/wp-content/uploads/2021/07/The-YoKo-BLK-NO-BG1.png" 
+            alt="The Yoko Logo"
+            className="w-[60px] sm:w-[80px] lg:w-[100px] h-auto object-contain" 
+        />
+    </Link>
+</div>
 
                 {/* Admin Actions & Hamburger - Extreme Right */}
                 <div className="absolute right-4 sm:right-8 lg:right-12 top-0 h-full flex items-center gap-2 pointer-events-auto">

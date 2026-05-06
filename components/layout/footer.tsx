@@ -13,7 +13,7 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     flexDirection: "column" as const,
   },
-   
+
   footer: {
     backgroundColor: "#242b32",
     color: "#ffffff",
@@ -168,7 +168,6 @@ const styles: Record<string, React.CSSProperties> = {
     padding: "0 24px", // Same padding as your topSection
     width: "100%",
   },
-  
 
   /* ── Bottom bar ── */
   bottomSection: {
