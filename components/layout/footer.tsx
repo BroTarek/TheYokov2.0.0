@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 
-
-
 const ACCENT = "#cd0026";
 
 const styles: Record<string, React.CSSProperties> = {
@@ -15,15 +13,14 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     flexDirection: "column" as const,
   },
-
+   
   footer: {
     backgroundColor: "#242b32",
     color: "#ffffff",
     fontFamily: "'Lato', sans-serif",
     width: "100%",
-    flex:1
+    flex: 1,
   },
-
   /* ── Top section (logo + newsletter | collab) ── */
   topSection: {
     maxWidth: 1200,
@@ -46,7 +43,7 @@ const styles: Record<string, React.CSSProperties> = {
     width: "140.49px",
     height: "37.59px",
     transform: "translateY(50%)",
-    translate:"13px",
+    translate: "13px",
   },
   tagline: {
     fontSize: 14,
@@ -56,7 +53,7 @@ const styles: Record<string, React.CSSProperties> = {
     margin: 0,
     marginTop: 24,
     transform: "translateY(36.122222%)",
-    translate:"13px",
+    translate: "13px",
   },
   taglineBold: { fontWeight: 600 },
   taglineBlack: { fontWeight: 900 },
@@ -70,13 +67,13 @@ const styles: Record<string, React.CSSProperties> = {
     gap: 12,
     marginTop: 48,
     transform: "translateY(36.122222%)",
-    translate:"13px",
+    translate: "13px",
   },
   input: {
     flex: 1,
-    maxWidth:"288px",
+    maxWidth: "288px",
     boxSizing: "border-box" as const,
-    backgroundColor: "rgba(255,255,255,0.07)",
+    backgroundColor: "rgba(66, 74, 91, 0.18)",
     border: "1px solid rgba(255,255,255,0.18)",
     borderRadius: "50px",
     color: "#fff",
@@ -102,7 +99,7 @@ const styles: Record<string, React.CSSProperties> = {
     justifyContent: "center",
     transition: "background 0.2s",
     transform: "translateY(-22%)",
-    translate:"11px"
+    translate: "11px",
   },
   formMessage: {
     marginTop: 8,
@@ -114,10 +111,10 @@ const styles: Record<string, React.CSSProperties> = {
   /* ── Social icons ── */
   socials: {
     display: "flex",
-    
+
     marginTop: 48,
     transform: "translateY(-70%)",
-    translate:"13px",
+    translate: "13px",
   },
   socialLink: {
     display: "inline-flex",
@@ -125,7 +122,7 @@ const styles: Record<string, React.CSSProperties> = {
     justifyContent: "center",
     width: 46,
     height: 46,
-    scale:"1.3",
+    scale: "1.3",
     // borderRadius: "50%",
     border: "none",
     color: "#fff",
@@ -138,9 +135,9 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-end",
-    alignItems:"flex-end",
+    alignItems: "flex-end",
     transform: "translateY(-7%)",
-    translate:"-13px",
+    translate: "-13px",
     gap: 8,
   },
   collabLabel: {
@@ -162,8 +159,16 @@ const styles: Record<string, React.CSSProperties> = {
   divider: {
     borderColor: "rgba(255,255,255,0.10)",
     margin: 0,
-    
+    maxWidth: "100%",
+    padding: "0 10%",
   },
+  dividerContainer: {
+    maxWidth: 1200,
+    margin: "0 auto",
+    padding: "0 24px", // Same padding as your topSection
+    width: "100%",
+  },
+  
 
   /* ── Bottom bar ── */
   bottomSection: {
@@ -212,7 +217,16 @@ function InstagramIcon() {
 
 function ArrowForwardIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <line x1="5" y1="12" x2="19" y2="12" />
       <polyline points="12 5 19 12 12 19" />
     </svg>
@@ -221,7 +235,7 @@ function ArrowForwardIcon() {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-const footer=()=> {
+const footer = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
@@ -267,19 +281,18 @@ const footer=()=> {
         .yoko-footer-form-input:focus { border-color: rgba(255,255,255,0.4) !important; }
         .yoko-footer-form-btn:hover   { background: rgba(255,255,255,0.12) !important; }
       `}</style>
-     <footer style={styles.footerWrapper}>
-
-      <footer style={styles.footer} itemScope itemType="http://schema.org/WPFooter">
-
-        {/* ── Top section ─────────────────────────────────────────────────────── */}
-        <div className="yoko-footer-top" style={styles.topSection}>
-
-
-          {/* Left column */}
-          <div style={styles.leftCol}>
-
-            {/* Logo */}
-            {/* <div style={styles.logoWrap}>
+      <footer style={styles.footerWrapper}>
+        <footer
+          style={styles.footer}
+          itemScope
+          itemType="http://schema.org/WPFooter"
+        >
+          {/* ── Top section ─────────────────────────────────────────────────────── */}
+          <div className="yoko-footer-top" style={styles.topSection}>
+            {/* Left column */}
+            <div style={styles.leftCol}>
+              {/* Logo */}
+              {/* <div style={styles.logoWrap}>
               <img
                 src="https://theyoko.com/wp-content/uploads/2021/07/The-YoKo-WM-WHT-NO-BG1.png"
                 alt="TheYoKo Logo"
@@ -291,101 +304,115 @@ const footer=()=> {
              
             </div>*/}
 
-             <div style={styles.logoWrap}><img src="https://theyoko.com/wp-content/uploads/2021/07/The-YoKo-WM-WHT-NO-BG1.png" alt="TheYoKo Logo" width="220" height="58" style={{width:"100%",height:"auto"}}/></div>
-              
+              <div style={styles.logoWrap}>
+                <img
+                  src="https://theyoko.com/wp-content/uploads/2021/07/The-YoKo-WM-WHT-NO-BG1.png"
+                  alt="TheYoKo Logo"
+                  width="220"
+                  height="58"
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </div>
 
-            {/* Tagline */}
-            <p style={styles.tagline}>
-              <span style={styles.taglineBold}>TheYoKo</span>
-              <span style={styles.taglineRed}>.</span> is built upon a foundation of multifaceted{" "}
-              <br />strength. Our name, 'YoKo' embodies a vision of both{" "}
-              <br />
-              <span style={styles.taglineBlack}>breadth </span>and{" "}
-              <span style={styles.taglineBold}>depth</span>.
+              {/* Tagline */}
+              <p style={styles.tagline}>
+                <span style={styles.taglineBold}>TheYoKo</span>
+                <span style={styles.taglineRed}>.</span> is built upon a
+                foundation of multifaceted <br />
+                strength. Our name, 'YoKo' embodies a vision of both <br />
+                <span style={styles.taglineBlack}>breadth </span>and{" "}
+                <span style={styles.taglineBold}>depth</span>.
+              </p>
+
+              {/* Newsletter form */}
+              <form
+                onSubmit={handleSubmit}
+                className="yoko-footer-form"
+                style={styles.form}
+                noValidate
+              >
+                <input
+                  className="yoko-footer-form-input"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your e-mail address"
+                  style={styles.input}
+                  aria-label="Email address for newsletter"
+                />
+                <button
+                  type="submit"
+                  aria-label="Subscribe"
+                  className="yoko-footer-form-btn"
+                  style={styles.submitBtn}
+                >
+                  <ArrowForwardIcon />
+                </button>
+              </form>
+              <p style={styles.formMessage}>{message}</p>
+
+              {/* Social icons */}
+              <nav style={styles.socials} aria-label="Social media links">
+                <a
+                  className="yoko-social-link"
+                  href="https://www.linkedin.com/company/the-yo-ko/"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={styles.socialLink}
+                  aria-label="LinkedIn"
+                >
+                  <LinkedInIcon />
+                </a>
+                {/* Instagram link — add href when available */}
+                <a
+                  className="yoko-social-link"
+                  href="#"
+                  style={styles.socialLink}
+                  aria-label="Instagram"
+                >
+                  <InstagramIcon />
+                </a>
+              </nav>
+            </div>
+
+            {/* Right column */}
+            <div className="yoko-footer-right" style={styles.rightCol}>
+              <p style={styles.collabLabel}>Looking for collaboration?</p>
+              <a
+                className="yoko-collab-email"
+                href="mailto:info@theyoko.com"
+                style={styles.collabEmail}
+              >
+                info@theyoko.com
+              </a>
+            </div>
+          </div>
+
+          {/* ── Divider ─────────────────────────────────────────────────────────── */}
+          <div style={styles.dividerContainer}>
+            <hr style={styles.divider} />
+          </div>
+          {/* ── Bottom bar ──────────────────────────────────────────────────────── */}
+          <div style={styles.bottomSection}>
+            <p style={styles.copyright}>
+              © Copyright 2026{" "}
+              <span style={styles.copyrightBrand}>TheYoKo</span>
+              <span style={{ fontWeight: 900, color: ACCENT }}>.</span> LLC. All
+              rights reserved.
             </p>
 
-            {/* Newsletter form */}
-            <form onSubmit={handleSubmit} className="yoko-footer-form" style={styles.form} noValidate>
-              <input
-                className="yoko-footer-form-input"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your e-mail address"
-                style={styles.input}
-                aria-label="Email address for newsletter"
-              />
-              <button
-                type="submit"
-                aria-label="Subscribe"
-                className="yoko-footer-form-btn"
-                style={styles.submitBtn}
-              >
-                <ArrowForwardIcon />
-              </button>
-            </form>
-            <p style={styles.formMessage}>{message}</p>
-
-            {/* Social icons */}
-            <nav style={styles.socials} aria-label="Social media links">
-              <a
-                className="yoko-social-link"
-                href="https://www.linkedin.com/company/the-yo-ko/"
-                target="_blank"
-                rel="noreferrer"
-                style={styles.socialLink}
-                aria-label="LinkedIn"
-              >
-                <LinkedInIcon />
-              </a>
-              {/* Instagram link — add href when available */}
-              <a
-                className="yoko-social-link"
-                href="#"
-                style={styles.socialLink}
-                aria-label="Instagram"
-              >
-                <InstagramIcon />
-              </a>
-            </nav>
-          </div>
-
-          {/* Right column */}
-          <div className="yoko-footer-right" style={styles.rightCol}>
-            <p style={styles.collabLabel}>Looking for collaboration?</p>
             <a
-              className="yoko-collab-email"
-              href="mailto:info@theyoko.com"
-              style={styles.collabEmail}
+              className="yoko-careers-link"
+              href="mailto:apply@theyoko.com"
+              style={styles.careersLink}
             >
-              info@theyoko.com
+              Careers
             </a>
           </div>
-        </div>
-
-        {/* ── Divider ─────────────────────────────────────────────────────────── */}
-        <hr style={styles.divider} />
-
-        {/* ── Bottom bar ──────────────────────────────────────────────────────── */}
-        <div style={styles.bottomSection}>
-          <p style={styles.copyright}>
-            © Copyright 2026{" "}
-            <span style={styles.copyrightBrand}>TheYoKo</span>
-            <span style={{ fontWeight: 900, color: ACCENT }}>.</span> LLC. All rights reserved.
-          </p>
-
-          <a
-            className="yoko-careers-link"
-            href="mailto:apply@theyoko.com"
-            style={styles.careersLink}
-          >
-            Careers
-          </a>
-        </div>
+        </footer>
       </footer>
-     </footer>
     </>
   );
-}
+};
 
-export default footer
+export default footer;
